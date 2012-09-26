@@ -1,6 +1,6 @@
 [submodule "mdo/resources/lib"]
 	path = mdo/resources/lib
-	url = ../mdo-deps
+	url = https://github.com/OSEHRA/mdo-deps.git
 [submodule "mdo-test/resources/lib"]
 	path = mdo-test/resources/lib
-	url = ../mdo-test-deps
+	url = https://github.com/OSEHRA/mdo-test-deps.git
