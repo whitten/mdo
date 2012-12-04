@@ -499,7 +499,13 @@ namespace gov.va.medora.mdo.dao.vista
             {
                 Assert.IsNotNull(sd[ds[key]]);
             }
-            Assert.AreEqual(1995535015, new TOEqualizer(ds).HashCode);
+
+            Assert.IsTrue(ds.ContainsKey("one"));
+            Assert.IsTrue(ds.ContainsKey("two"));
+            Assert.AreEqual(ds.Count, sd.Count);
+       
+            //Hash Code is not stable acrosss .Net Versions
+            //Assert.AreEqual(1995535015, new TOEqualizer(ds).HashCode);
         }
 
         [Test]

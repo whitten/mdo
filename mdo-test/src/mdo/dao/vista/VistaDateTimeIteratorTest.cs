@@ -101,7 +101,17 @@ namespace gov.va.medora.mdo.dao.vista
                 testIterator.AdvanceIterStartDate(); // put at end of loop
             }
             int result = string.Concat(values.ToArray()).GetHashCode();
-            Assert.AreEqual(1712919498, result);
+            //Spot Check - Count
+            Assert.AreEqual(26, values.Count);
+            String[] strings = values.ToArray();
+            //Spot Check - Validate Start Value
+            Assert.IsTrue(strings[0].Equals("3080101.22"));
+            //Spot Check - Validate End Value
+            Assert.IsTrue(strings[25].Equals("3080102.23"));
+            //Spot Check - Validate an Intermediate Value
+            Assert.IsTrue(strings[14].Equals("3080102.12"));
+            //Hash Code is not stable acrosss .Net Versions
+            //Assert.AreEqual(1712919498, result);
         }
 
         [Test]
