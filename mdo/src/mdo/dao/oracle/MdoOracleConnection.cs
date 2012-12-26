@@ -17,13 +17,8 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Oracle.DataAccess.Client;
-//using Oracle.DataAccess.Types;
+using System.Data.OracleClient;
 using gov.va.medora.mdo.exceptions;
-using gov.va.medora.mdo.src.mdo;
-//using System.Data.OracleClient;
 
 namespace gov.va.medora.mdo.dao.oracle
 {

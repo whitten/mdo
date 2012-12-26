@@ -17,8 +17,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Data.SQLite;
 using gov.va.medora.utils;
@@ -134,11 +132,11 @@ namespace gov.va.medora.mdo.dao.mock
             }
         }
 
-        internal string buildParametersString(Oracle.DataAccess.Client.OracleParameterCollection oracleParams)
+        internal string buildParametersString(System.Data.OracleClient.OracleParameterCollection oracleParams)
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach (Oracle.DataAccess.Client.OracleParameter param in oracleParams)
+            foreach (System.Data.OracleClient.OracleParameter param in oracleParams)
             {
                 if (param.DbType == System.Data.DbType.Binary || param.DbType == System.Data.DbType.Object)
                 {

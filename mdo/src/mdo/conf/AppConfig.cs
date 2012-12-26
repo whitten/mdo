@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using gov.va.medora.mdo.dao.file;
@@ -44,7 +45,7 @@ namespace gov.va.medora.mdo.conf
         /// </summary>
         public AppConfig() 
         {
-            readConfigFile(utils.ResourceUtils.ResourcesPath + "conf\\" + ConfigFileConstants.CONFIG_FILE_NAME);
+            readConfigFile(Path.Combine(utils.ResourceUtils.ResourcesPath, "conf", ConfigFileConstants.CONFIG_FILE_NAME));
         }
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace gov.va.medora.mdo.conf
         {
             if (useDefaultResourcesPath && !String.IsNullOrEmpty(fileName))
             {
-                readConfigFile(utils.ResourceUtils.ResourcesPath + "conf\\" + fileName);
+                readConfigFile(Path.Combine(utils.ResourceUtils.ResourcesPath, "conf", fileName));
             }
         }
 
