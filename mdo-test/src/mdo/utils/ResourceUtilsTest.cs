@@ -17,11 +17,8 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.IO;
 using NUnit.Framework;
-using System.Reflection;
 using gov.va.medora.utils;
 
 namespace gov.va.medora.mdo.src.mdo.utils
@@ -43,21 +40,28 @@ namespace gov.va.medora.mdo.src.mdo.utils
         public void testGetResources() 
         {
             string path = ResourceUtils.ResourcesPath;
-            Assert.IsTrue(path.EndsWith(@"\mdo-test\resources\"));
+            string pathToTest = Path.Combine("mdo-test", "resources");
+            Console.WriteLine(pathToTest);
+            //Assert.IsTrue(path.EndsWith(@"\mdo-test\resources\"));
+            Assert.IsTrue(path.EndsWith(pathToTest));
         }
 
         [Test]
         public void testGetXmlResources()
         {
             string path = ResourceUtils.XmlResourcesPath;
-            Assert.IsTrue(path.EndsWith(@"\mdo-test\resources\xml"));
+            string pathToTest = Path.Combine("mdo-test", "resources", "xml");
+            //Assert.IsTrue(path.EndsWith(@"\mdo-test\resources\xml"));
+            Assert.IsTrue(path.EndsWith(pathToTest));
         }
 
         [Test]
         public void testGetDataResources()
         {
             string path = ResourceUtils.DataResourcesPath;
-            Assert.IsTrue(path.EndsWith(@"\mdo-test\resources\data"));
+            string pathToTest = Path.Combine("mdo-test", "resources", "data");
+            //Assert.IsTrue(path.EndsWith(@"\mdo-test\resources\data"));
+            Assert.IsTrue(path.EndsWith(pathToTest));
         }
     }
 }

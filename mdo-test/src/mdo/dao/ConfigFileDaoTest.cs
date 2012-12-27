@@ -16,10 +16,9 @@
 //
 #endregion
 
-using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace gov.va.medora.mdo.dao.file
@@ -40,7 +39,8 @@ namespace gov.va.medora.mdo.dao.file
         public void testReadConfigValidFile()
         {
             string projectResourcePath = gov.va.medora.utils.ResourceUtils.ResourcesPath;
-            string confFilePath = projectResourcePath + "conf\\app.conf";
+            //string confFilePath = projectResourcePath + "conf\\app.conf"; //VEN/SMH - Changing.
+            string confFilePath = Path.Combine(projectResourcePath, "conf", "app.conf");
 
             ConfigFileDao dao = new ConfigFileDao(confFilePath);
             Dictionary<string, Dictionary<string, string>> result = dao.getAllValues();
