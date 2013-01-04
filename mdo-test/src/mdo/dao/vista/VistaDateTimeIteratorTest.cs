@@ -28,7 +28,7 @@ namespace gov.va.medora.mdo.dao.vista
     {
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestSetIteratorLengthFromDates()
         {
             VistaDateTimeIterator testIterator = new VistaDateTimeIterator("20080102.234556", "20080103");
@@ -37,7 +37,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestSetIteratorLengthFromEndDate()
         {
             VistaDateTimeIterator testIterator = new VistaDateTimeIterator("20080102", "20080103.01");
@@ -46,7 +46,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestSetIteratorLengthFromEndDateZero()
         {
             VistaDateTimeIterator testIterator = new VistaDateTimeIterator("20080102", "20080103.00");
@@ -59,7 +59,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// in seconds.
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestSetIteratorLengthNormalizedNumber()
         {
             VistaDateTimeIterator testIterator = new VistaDateTimeIterator("20080102.000000", "20080103.0000");
@@ -69,7 +69,7 @@ namespace gov.va.medora.mdo.dao.vista
 
         /// <summary>Dummy check...</summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestPrecisionPositions()
         {
             string testDate = VistaTimestamp.fromDateTime(new DateTime(2008, 01, 23, 12, 34, 56, 789));
@@ -85,7 +85,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// Test to see that as we roll over days, that the iterator will do the right thing as well.
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestHourRollOver()
         {
             VistaDateTimeIterator testIterator = new VistaDateTimeIterator(
@@ -105,7 +105,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationDays()
         {
             int result = VistaDateTimeIterator.IterationDays("1.000000");
@@ -113,7 +113,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationDaysPoint()
         {
             int result = VistaDateTimeIterator.IterationDays(".000000");
@@ -121,7 +121,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationDays1Hour()
         {
             int result = VistaDateTimeIterator.IterationDays(".100000");
@@ -129,7 +129,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationDays1HourNoPoint()
         {
             int result = VistaDateTimeIterator.IterationDays("100000");
@@ -137,7 +137,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationHours()
         {
             int result = VistaDateTimeIterator.IterationHours("1.100000");
@@ -145,7 +145,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationHoursNoPoint()
         {
             int result = VistaDateTimeIterator.IterationHours("120000");
@@ -153,7 +153,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationHoursPoint()
         {
             int result = VistaDateTimeIterator.IterationHours(".345000");
@@ -161,7 +161,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationMinutes()
         {
             int result = VistaDateTimeIterator.IterationMinutes(".345000");
@@ -169,7 +169,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationSecond()
         {
             int result = VistaDateTimeIterator.IterationSeconds(".345036");
@@ -177,7 +177,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationTimeSpanFromString()
         {
             TimeSpan result = VistaDateTimeIterator.IterationTimeSpanFromString("1.010230");
@@ -191,7 +191,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// - e.g. seconds to minutes and hours to days
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationTimeSpanFromStringTooManySeconds()
         {
             TimeSpan result = VistaDateTimeIterator.IterationTimeSpanFromString("1.250290");
@@ -205,7 +205,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// - e.g. seconds to minutes and hours to days
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationTimeSpanFromStringOneDay()
         {
             TimeSpan result = VistaDateTimeIterator.IterationTimeSpanFromString("1.");
@@ -220,7 +220,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// used instead.
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationTimeSpanFromStringOne()
         {
             TimeSpan result = VistaDateTimeIterator.IterationTimeSpanFromString("1");
@@ -231,7 +231,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// One hour
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationTimeSpanFromStringDotOhOne()
         {
             TimeSpan result = VistaDateTimeIterator.IterationTimeSpanFromString(".01");
@@ -239,7 +239,7 @@ namespace gov.va.medora.mdo.dao.vista
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestIterationTimeSpanFromStringOhOne()
         {
             TimeSpan result = VistaDateTimeIterator.IterationTimeSpanFromString("01");

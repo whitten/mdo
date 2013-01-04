@@ -305,7 +305,7 @@ namespace gov.va.medora.mdo.dao.vista
         /// things like larger DFNS
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestAdjustForNumericSearchInt64()
         {
             string longDfn = "5587247575";

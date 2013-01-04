@@ -829,7 +829,7 @@ namespace gov.va.medora.mdo
         /// This tests what would otherwise be a valid SSN
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestPseudoSSNValidSSN()
         {
             SocSecNum testSsn = new SocSecNum("123456789p");
@@ -843,7 +843,7 @@ namespace gov.va.medora.mdo
         /// doesn't make validation more lax across the board for SSNs
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestPseudoSSNInvalidSSN()
         {
             /// the 666 should invalidate the SSN, not the P
