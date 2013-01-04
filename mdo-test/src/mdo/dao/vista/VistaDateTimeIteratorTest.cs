@@ -81,6 +81,22 @@ namespace gov.va.medora.mdo.dao.vista
             Assert.AreEqual("3080123.123456", testDate.Substring(0, (int)VistaDateTimeIterator.PRECISION.SECOND));
         }
 
+       public string CalculateMD5Hash(string input)
+        {
+          // step 1, calculate MD5 hash from input
+          System.Security.Cryptography.MD5 md5
+            = System.Security.Cryptography.MD5.Create();
+          byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+          byte[] hash = md5.ComputeHash(inputBytes);
+          // step 2, convert byte array to hex string
+          StringBuilder sb = new StringBuilder();
+          for (int i = 0; i < hash.Length; i++)
+            {
+            sb.Append(hash[i].ToString("X2"));
+            }
+          return sb.ToString();
+        }
+
         /// <summary>
         /// Test to see that as we roll over days, that the iterator will do the right thing as well.
         /// </summary>
@@ -88,6 +104,8 @@ namespace gov.va.medora.mdo.dao.vista
         [Category("unit_only")]
         public void TestHourRollOver()
         {
+          //http://msdn.microsoft.com/en-us/library/system.string.gethashcode.aspx
+          //   If two string objects are equal, the GetHashCode method returns identical values. However, there is not a unique hash code value for each unique string value. Different strings can return the same hash code. 
             VistaDateTimeIterator testIterator = new VistaDateTimeIterator(
                 new DateTime(2008, 01, 01, 22, 0, 0)
                 , new DateTime(2008, 01, 03)
@@ -100,8 +118,8 @@ namespace gov.va.medora.mdo.dao.vista
                 values.Add(testIterator.GetDdrListerPart());
                 testIterator.AdvanceIterStartDate(); // put at end of loop
             }
-            int result = string.Concat(values.ToArray()).GetHashCode();
-            Assert.AreEqual(1712919498, result);
+            string hash = CalculateMD5Hash(string.Concat(values.ToArray()));
+            Assert.AreEqual("830FAB9CC0EB3A1E3855B5DF0F560213", hash);
         }
 
         [Test]
