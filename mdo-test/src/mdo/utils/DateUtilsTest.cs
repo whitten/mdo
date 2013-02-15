@@ -246,7 +246,7 @@ namespace gov.va.medora.utils
         }
 
         [Test]
-        [Category("real-sites")]
+        [Category("real_sites")]
         public void TestIsoDateStringToDateTimeWithHours()
         {
             String dateString = "20070102.123456789";
@@ -255,7 +255,7 @@ namespace gov.va.medora.utils
         }
 
         [Test]
-        [Category("real-sites")]
+        [Category("real_sites")]
         public void TestIsoDateStringToDateTimeWithHoursMissingSeconds()
         {
             String dateString = "20070102.123400789";
@@ -264,7 +264,7 @@ namespace gov.va.medora.utils
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestTrimTime_NormalDateTime()
         {
             string DATE_TIME = "20091123.123456";
@@ -272,7 +272,7 @@ namespace gov.va.medora.utils
         }
 
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestTrimTime_NormalDateOnly()
         {
             string DATE_TIME = "20091123";
@@ -282,7 +282,7 @@ namespace gov.va.medora.utils
         /// <summary>Function will return an empty date if nothing present before the '.' separator
         /// </summary>
         [Test]
-        [Category("unit-only")]
+        [Category("unit_only")]
         public void TestTrimTime_SeparatorAndTimeOnly()
         {
             string DATE_TIME = ".123456";
